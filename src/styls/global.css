@@ -17,6 +17,18 @@
     --white-1: #ffffff;
     --white-2: #fff;
     --grey-1: #707070;
+    --grey-2: #f5f5f5;
+    --grey-3: #595566;
+
+    /* core value card */
+    /* dark */
+    --card-bg-dark: var(--grey-2);
+    --card-text-collor-dark: var(--grey-3);
+    --corevalue--dark-bg: var(--sort-3);
+    /* light */
+    --card-bg-light: var(--white-2);
+    --card-text-collor-ligth: var(--grey-3);
+    --corvalue-light-bg: var(--grey-2);
 
     /* header */
     --header-bg: var(--sort-4);
@@ -45,6 +57,10 @@
     --button-text-primery: var(--white-1);
     --button-bg-secondary: var(--yelow-1);
     --button-text-secondary: var(--sort-3);
+    --button-bg-dark: var(--sort-3);
+    --button-text-dark: var(--white-2);
+    --button-bg-light: var(--white-2);
+    --button-text-light: var(--sort-3);
 
     /* font size */
 

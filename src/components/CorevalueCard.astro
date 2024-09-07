@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components";
+const { link, text, title, description, variant } = Astro.props;
+---
+
+<article class={variant}>
+  <div class="heder-wrap">
+    <Icon name="gear" />
+    <h4 class="corevalueheader flow">{title}</h4>
+  </div>
+  <p class="corevaluetext flow">
+    {description}
+  </p>
+  <a class="readmore flow" href={link}>
+    {text}
+    {text ? text : "Read More"}
+    <Icon name="arrow" />
+  </a>
+</article>
+
+<style>
+  .flow {
+    margin-top: var(--flow-space, 1em);
+  }
+
+  .corevalueheader {
+    --flow-space: 1.375rem;
+  }
+
+  .corevaluetext {
+    --flow-space: 0.625rem;
+  }
+
+  .readmore {
+    --flow-space: 1.375rem;
+  }
+  [data-icon] {
+    width: 3.29863rem;
+    height: 3.29863rem;
+  }
+  h4 {
+    color: #181818;
+    font-family: Cabin;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 116%; /* 1.45rem */
+  }
+
+  article {
+    max-width: 17rem;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--card-bg-light);
+    padding: 2.25rem 1.4375rem;
+
+    p {
+      color: var(--card-text-collor-ligth);
+      text-wrap: balance;
+      grid-column: 1 /-1;
+    }
+  }
+  .dark {
+    background-color: var(--card-bg-dark);
+
+    p {
+      color: var(--card-text-collor-dark);
+    }
+  }
+
+  .light {
+    background-color: var(--card-bg-light);
+    p {
+      color: var(--card-text-collor-ligth);
+    }
+  }
+
+  .readmore [data-icon] {
+    width: 1.81675rem;
+    height: 1.66825rem;
+  }
+  .readmore {
+    display: flex;
+    gap: 1rem;
+    /* text stling midlertidig  */
+    color: #181818;
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 1.8rem */
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import CorevalueCard from "./CorevalueCard.astro";
+import Button from "./Button.astro";
+
+const { data, theme = "light" } = Astro.props;
+---
+
+<section data-theme={theme}>
+  <div class="flex">
+    <div class="inner">
+      <p class="p-bg bg">Growing with our Clients</p>
+      <h3>Our core values & principles</h3>
+      <p class="gap">
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+    </div>
+    <Button variant="dark fat">Get in touch </Button>
+  </div>
+  <!-- {data.map((corevalue) => <CorevalueCard {...corevalue} />)} -->
+  <div class="content">
+    {
+      data.values.map((corevalue) => (
+        <CorevalueCard {...corevalue} variant={theme} />
+      ))
+    }
+  </div>
+</section>
+<style>
+  section {
+    padding: 6.25rem 0;
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+    > * {
+      grid-column: content;
+    }
+  }
+  .gap {
+    margin-top: 0.6rem;
+  }
+  .bg {
+    background: #ffcc4a;
+  }
+  .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    p {
+      text-wrap: balance;
+    }
+  }
+  .inner {
+    max-width: 36.75rem;
+  }
+  .content {
+    margin-top: 2.1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  [data-theme="light"] {
+    background: var(--corevalue--light-bg);
+  }
+
+  [data-theme="dark"] {
+    background: var(--corevalue--dark-bg);
+  }
+</style>

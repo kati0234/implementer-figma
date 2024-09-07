@@ -1,0 +1,14 @@
+---
+const corevalueData = await fetch(
+  "https://raw.githubusercontent.com/kati0234/frontend-design/main/resources/json/corevalues.json"
+).then((res) => res.json());
+
+console.log(Array.isArray(corevalueData));
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CorevalueSection from "../components/CorevalueSection.astro";
+---
+
+<BaseLayout title="Casestudy">
+  <CorevalueSection data={corevalueData} theme="light" />
+</BaseLayout>
