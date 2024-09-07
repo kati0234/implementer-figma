@@ -1,0 +1,133 @@
+@layer reset, components, overrides;
+
+@import url("./reset.css") layer(reset);
+@import url("./overrids.css") layer(overrids);
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@layer global {
+  /* overskrifter .. farver html er det samme som root kan bruges til variabler */
+  html {
+    /* color */
+    --sort-1: #151515;
+    --sort-2: #1c1c1c;
+    --sort-3: #181818;
+    --sort-4: rgba(27, 27, 27, 0.91);
+    --yelow-1: #ffcc4a;
+    --yelow-2: #fbc336;
+    --yelow-3: #daae3c;
+    --white-1: #ffffff;
+    --white-2: #fff;
+    --grey-1: #707070;
+
+    /* header */
+    --header-bg: var(--sort-4);
+    --header-text-coler: var(--white-2);
+    --logo-text-size: var(--fluid-14-30);
+
+    /* footer */
+    --hr-color: var(--grey-1);
+    --footer-bg-coler: var(--sort-3);
+    --footer-text-coler: var(--white-1);
+    --logo-text-size: var(--fluid-14-30);
+
+    /* logo size */
+    --logo-text-size: var(--fluid-14-30);
+
+    /* text farver */
+    --body-text: #595566;
+    --heding-text-color: var(--sort-2);
+
+    /* hero componet */
+    --p-bg: var(--yelow-1);
+
+    /* knap farver */
+
+    --button-bg-primery: var(--sort-3);
+    --button-text-primery: var(--white-1);
+    --button-bg-secondary: var(--yelow-1);
+    --button-text-secondary: var(--sort-3);
+
+    /* font size */
+
+    --fluid-30-50: clamp(1.875rem, 1.4402rem + 2.1739vw, 3.125rem);
+    --fluid-25-45: clamp(1.5625rem, 1.1277rem + 2.1739vw, 2.8125rem);
+    --fluid-20-40: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
+    --fluid-16-35: clamp(1rem, 0.587rem + 2.0652vw, 2.1875rem);
+    --fluid-14-30: clamp(0.875rem, 0.5272rem + 1.7391vw, 1.875rem);
+    --fluid-12-25: clamp(0.75rem, 0.4674rem + 1.413vw, 1.5625rem);
+
+    /* font */
+    --logo-text-size: var(--fluid-14-30);
+
+    /* news */
+    --subscribe-text-size: var(--fluid-16-35);
+    /* cgart */
+    --cgart-bg: var(--yelow-2);
+    --cgart-border-fill-bg: var(--yelow-3);
+    --cgart-border-fill: var(--white-2);
+    --cgart-dot-fill: var(--sort-3);
+
+    /* scroll */
+    --content-width: 50rem;
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
+    --card-border-radius: 8px;
+    --card-background: #ebebeb;
+    --card-text-color: #595566;
+    /* mere */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    color: var(--body--text);
+    line-height: 1.5;
+  }
+  h1 {
+    font-family: "cabin";
+    color: var(--heding-text-color);
+    font-size: var(--fluid-30-50);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h2 {
+    font-family: "cabin";
+    color: var(--heding-text-color);
+    font-size: var(--fluid-25-45);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h3 {
+    font-family: "cabin";
+    color: var(--heding-text-color);
+    font-size: var(--fluid-20-40);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h4 {
+    font-family: "cabin";
+    color: var(--heding-text-color);
+    font-size: var(--fluid-16-35);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h5 {
+    font-family: "cabin";
+    color: var(--heding-text-color);
+    font-size: var(--fluid-14-30);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h6 {
+    font-family: "cabin";
+    color: var(--heding-text-color);
+    font-size: var(--fluid-12-25);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .p-bg {
+    border-radius: 1.25rem;
+    font-family: Lato;
+    letter-spacing: 0.145rem;
+    text-transform: uppercase;
+    padding: 0rem 0.875rem;
+    width: fit-content;
+  }
+}

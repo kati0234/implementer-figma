@@ -1,0 +1,98 @@
+---
+
+---
+
+<div class="cgart-box">
+  <div class="bg">
+    <div class="parent" style="--percent: 85%">
+      <div class="child"></div>
+      <p>85%</p>
+    </div>
+    <p>consisgency</p>
+  </div>
+  <div class="bg">
+    <div class="parent" style="--percent: 95%">
+      <div class="child"></div>
+      <p>95%</p>
+    </div>
+    <p>Improvement</p>
+  </div>
+  <div class="bg">
+    <div class="parent" style="--percent: 90%">
+      <div class="child"></div>
+      <p>90%</p>
+    </div>
+    <p>Branching</p>
+  </div>
+</div>
+
+<!-- <div class="parent" style="--percent: 95%">
+  <div class="child"></div>
+</div>
+
+<div class="parent" style="--percent: 90%">
+  <div class="child"></div>
+</div> -->
+<style>
+  /*@property --percent {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}*/
+  .cgart-box {
+    display: flex;
+    gap: 1.625rem;
+  }
+  .bg {
+    background: var(--cgart-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .parent {
+    --offset-pos: 5px;
+    /*animation: --pie 3s linear infinite;*/
+    border: var(--offset-pos) solid transparent;
+    background:
+      linear-gradient(var(--cgart-bg), var(--cgart-bg)) padding-box,
+      conic-gradient(
+          var(--cgart-border-fill) var(--percent),
+          var(--cgart-border-fill-bg) 0
+        )
+        border-box;
+    position: relative;
+    align-content: center;
+    text-align: center;
+
+    .child {
+      aspect-ratio: 1;
+      border-radius: 99px;
+      width: 20px;
+      background: var(--cgart-border-fill);
+      position: absolute;
+      offset-path: border-box;
+      offset-distance: var(--percent);
+      offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
+    }
+  }
+
+  /*@keyframes --pie {
+  to {
+    --percent: 100%;
+  }
+}*/
+
+  .parent {
+    aspect-ratio: 1;
+    width: 150px;
+    border-radius: 1e5px;
+    margin-inline: auto;
+  }
+
+  /* cgart */
+  --cgart-bg: var(--yelow-2);
+  --cgart-border-fill-bg: var(--yelow-3);
+  --cgart-border-fill: var(--white-2);
+  --cgart-dot-fill: var(--sort-3);
+</style>

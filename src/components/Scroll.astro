@@ -1,0 +1,116 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="top">
+  <div>
+    <Icon name="financial-icon" />
+    <h2>Financial Projections</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+  </div>
+  <div class="pile">
+    <Icon name="sort-pil" />
+    <Icon name="gul-pil" />
+  </div>
+</div>
+<ul class="">
+  <li>
+    <div>
+      <Icon name="sheed" />
+      <p class="fed">The Balance Sheet</p>
+      <p>
+        The Balance Sheet is a summary of the assets and liabilities and equity
+        of a business at a specific point of time.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <Icon name="card" />
+      <p class="fed">The Balance Sheet</p>
+      <p>
+        The Balance Sheet is a summary of the assets and liabilities and equity
+        of a business at a specific point of time.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <Icon name="hous" />
+      <p class="fed">The Balance Sheet</p>
+      <p>
+        The Balance Sheet is a summary of the assets and liabilities and equity
+        of a business at a specific point of time.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <Icon name="dollar" />
+      <p class="fed">The Balance Sheet</p>
+      <p>
+        The Balance Sheet is a summary of the assets and liabilities and equity
+        of a business at a specific point of time.
+      </p>
+    </div>
+  </li>
+</ul>
+<style>
+  ul {
+    margin: 4rem 0 6rem 0;
+    grid-column: 2/-1;
+    display: flex;
+    gap: var(--card-gap);
+    overflow-x: auto;
+    list-style: none;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    align-items:;
+
+    li {
+      border-radius: var(--card-border-radius);
+      background: var(--card-background);
+      padding: var(--card-padding);
+      color: var(--card-text-color);
+      flex-basis: min(400px, 90%);
+      flex-shrink: 0;
+      scroll-snap-align: center;
+    }
+  }
+  .top [data-icon] {
+    width: 4rem;
+    height: 4rem;
+  }
+  [data-icon] {
+    width: 2.375rem;
+    height: 1.625rem;
+  }
+  .fed {
+    margin-top: 1.5rem;
+    margin-bottom: 0.62rem;
+    color: #181818;
+    font-family: Cabin;
+    font-size: 1.5625rem;
+  }
+  .top {
+    margin-top: 9.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    p {
+      max-width: 40.3125rem;
+    }
+  }
+  .pile {
+    display: flex;
+    height: fit-content;
+    gap: 1rem;
+  }
+</style>

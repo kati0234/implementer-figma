@@ -1,0 +1,20 @@
+.flow {
+  > * + * {
+    margin-top: var(--flow-space, 1em);
+  }
+  h2 {
+    --flow-space: 2rem;
+  }
+  p {
+    --flow-space: 0.81rem;
+  }
+  .social {
+    --flow-space: 1.69rem;
+  }
+  .content {
+    --flow-space: 1.56rem;
+  }
+  .scroll {
+    --flow-space: 4rem;
+  }
+}

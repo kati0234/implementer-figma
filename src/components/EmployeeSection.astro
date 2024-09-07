@@ -1,0 +1,31 @@
+---
+import type { ACTION_ERROR_CODES } from "astro:actions";
+import EmployeeCard from "./EmployeeCard.astro";
+
+const { data, theme = "light" } = Astro.props;
+---
+
+<section data-theme={theme}>
+  {data.map((employee) => <EmployeeCard {...employee} />)}
+</section>
+<style>
+  @layer components {
+    [data-theme="dark"] {
+      --bg-section: red;
+      --text--section: #fff;
+      --bg-card: blue;
+      --text--card: #fff;
+    }
+    section {
+      padding: 2rem;
+      color: var(--text--section);
+      background: var(--bg-section);
+      display: grid;
+      gap: 3.19rem;
+
+      @media (width > 600px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+</style>

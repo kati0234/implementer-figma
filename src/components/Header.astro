@@ -1,0 +1,68 @@
+---
+import Button from "./Button.astro";
+---
+
+<header>
+  <div class="inner">
+    <div class="logo">AskExperts</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="">Home</a></li>
+        <li><a href="/"> Team</a></li>
+        <li><a href="">Case Study</a></li>
+
+        <li><a href="/about"> About</a></li>
+      </ul>
+    </nav>
+    <Button variant="secondary"> Login </Button>
+  </div>
+
+  <style>
+    @layer compnents {
+      /* ::backdrop {
+      background: #0004;
+      backdrop-filter: blur(100px);
+    } */
+      header {
+        background: var(--header-bg);
+      }
+      .logo {
+        color: var(--header-text-coler);
+        font-family: Cabin;
+        /* font-size: 1.875rem; */
+        font-size: var(--logo-text-size);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.05;
+      }
+      .inner {
+        padding: 2.375rem 0;
+
+        grid-column: content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-list {
+        display: flex;
+        align-items: center;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+      }
+      a {
+        font-family: "lato";
+        font-size: 1.108rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--header-text-coler);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      a:link {
+        color: var(--header-text-coler);
+      }
+    }
+  </style>
+</header>

@@ -1,0 +1,38 @@
+---
+import Cgart from "./Cgart.astro";
+---
+
+<section>
+  <div class="inner">
+    <div class="text-wrap">
+      <p class="p-bg">Experience</p>
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
+    <Cgart />
+  </div>
+</section>
+<style>
+  section {
+    background-color: var(--cgart-bg);
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+    > * {
+      grid-column: content;
+    }
+  }
+  .p-bg {
+    background: #fff;
+  }
+  .inner {
+    padding: 8.31rem 0;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 
+    5rem; */
+  }
+  h2 {
+    text-wrap:;
+  }
+</style>
