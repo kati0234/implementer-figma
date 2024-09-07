@@ -1,48 +1,45 @@
 ---
+const corevalueData = await fetch(
+  "https://raw.githubusercontent.com/kati0234/frontend-design/main/resources/json/corevalues.json"
+).then((res) => res.json());
+
+console.log(Array.isArray(corevalueData));
+import CorevalueSection from "../components/CorevalueSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
-
+import Cheklist from "../components/Cheklist.astro";
 import Accordian from "../components/Accordian.astro";
+import Hero from "../components/Hero.astro";
+import Counters from "../components/Counters.astro";
 ---
 
 <BaseLayout title="about">
-  <h1>ss</h1>
+  <Hero bgimg="url(/images/about-hero.png)" />
   <section>
-    <div>
-      <figure></figure>
+    <div class="flex">
       <div>
-        <h4>sara jasmin</h4>
-        <p>ceo</p>
+        <Cheklist
+          variant="about"
+          description="0ur vision"
+          title="Turn your ideas into reality."
+          text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+        />
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel harum fuga
-        ipsam aperiam molestiae. Quis reiciendis eius accusamus quisquam,
-        repellat odit nam in sint aliquam inventore, voluptate architecto fugiat
-        fuga?
-      </p>
-
-      <Icon name="instagram-dark" />
-      <Icon name="facebook-dark" />
-      <Icon name="twitter-dark" />
-      <Icon name="linked-in" />
-      <hr />
-      <h4>Past experience</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo non
-        officiis vero dolorum, minima molestiae veritatis accusamus quia quos?
-        Laboriosam, cumque at quaerat modi nisi non iste pariatur temporibus
-        culpa?
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
-        dolore dicta pariatur qui ut consequatur quae alias quia aliquam,
-        libero, explicabo numquam molestias porro impedit dolorum ratione
-        ducimus laboriosam cum?
-      </p>
+      <div class="billed-box">
+        <figure>
+          <img src="./images/about-mensker.jpg" alt="" />
+        </figure>
+      </div>
     </div>
+    <Counters />
   </section>
+  <CorevalueSection data={corevalueData} theme="light" />
 </BaseLayout>
 <style>
+  .flex {
+    display: flex;
+    gap: 7.625rem;
+  }
   [data-icon] {
     width: 1.50038rem;
     height: 1.44381rem;

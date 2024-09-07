@@ -1,9 +1,21 @@
+---
+const { title, text, description, variant } = Astro.props;
+---
+
+<p class={variant}>{description}</p>
+<h2>{title}</h2>
+<p>
+  {text}
+</p>
 <ul>
-  <li>Lorem, ipsum dolor sit amet consectetur</li>
-  <li>Ducimus velit consequatur ipsam id omnis vel blanditiis</li>
-  <li>Neque fuga, aperiam</li>
-  <li>Quisquam, facere vero? Nisi ad eveniet</li>
-  <li>Esse consequuntur</li>
+  <li>
+    Bring to the table win-win survival strategies to ensure proactive
+    domination. At the end of the day.
+  </li>
+  <li>
+    Capitalize on low hanging fruit to identify a ballpark value added activity
+    to beta test override the digital.
+  </li>
 </ul>
 
 <style>
@@ -32,21 +44,46 @@
     background: var(--checkmark-icon) 50% 50% / contain no-repeat;
   }
 
-  @layer reset {
-    html,
-    body {
-      height: 100%;
-    }
-
-    body {
-      display: grid;
-      place-items: center;
-      font-family: system-ui;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+  /* @layer reset { */
+  html,
+  body {
+    height: 100%;
   }
+
+  body {
+    display: grid;
+    place-items: center;
+    font-family: system-ui;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .home {
+    color: black;
+    background: var(--yelow-2);
+    /* hurtig fiks */
+    border-radius: 1.25rem;
+    font-family: Lato;
+    letter-spacing: 0.145rem;
+    text-transform: uppercase;
+    padding: 0rem 0.875rem;
+    width: fit-content;
+  }
+  .about {
+    color: #fff;
+    background: green;
+    /* hurtig fiks */
+    border-radius: 1.25rem;
+    font-family: Lato;
+    letter-spacing: 0.145rem;
+    text-transform: uppercase;
+    padding: 0rem 0.875rem;
+    width: fit-content;
+  }
+  p {
+    text-wrap: balance;
+  }
+  /* } */
 </style>

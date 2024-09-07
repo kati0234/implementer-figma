@@ -1,17 +1,59 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
-
+import { Image } from "astro:assets";
 import Accordian from "../components/Accordian.astro";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <BaseLayout title="about">
-  <h1>ss</h1>
   <section>
+    <div class="box">
+      <figure><img src="./images/daisyy.jpg" alt="" /></figure>
+      <div>
+        <div class="header">
+          <div>
+            <h1>Sarah Jasmine</h1>
+            <p class="job">CEO at Company</p>
+          </div>
+          <hr class="verikal" />
+          <div class="icons">
+            <Icon name="instagram-dark" />
+            <Icon name="facebook-dark" />
+            <Icon name="twitter-dark" />
+            <Icon name="linked-in" />
+          </div>
+        </div>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit sed do.
+        </p>
+        <hr class="horisotal" />
+        <h2>Past experience</h2>
+
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit sed do. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- <section>
     <div>
       <figure></figure>
       <div>
-        <h4>sara jasmin</h4>
+        <h1>sara jasmin</h1>
         <p>ceo</p>
       </div>
       <p>
@@ -20,11 +62,12 @@ import Accordian from "../components/Accordian.astro";
         repellat odit nam in sint aliquam inventore, voluptate architecto fugiat
         fuga?
       </p>
-
-      <Icon name="instagram-dark" />
-      <Icon name="facebook-dark" />
-      <Icon name="twitter-dark" />
-      <Icon name="linked-in" />
+      <div class="felx">
+        <Icon name="instagram-dark" />
+        <Icon name="facebook-dark" />
+        <Icon name="twitter-dark" />
+        <Icon name="linked-in" />
+      </div>
       <hr />
       <h4>Past experience</h4>
       <p>
@@ -40,11 +83,118 @@ import Accordian from "../components/Accordian.astro";
         ducimus laboriosam cum?
       </p>
     </div>
-  </section>
+  </section> -->
 </BaseLayout>
 <style>
+  .box {
+    margin-top: 10rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 5.5625rem;
+  }
+  .verikal {
+    height: 0.0625rem;
+    background: #595566;
+    width: 30px;
+    rotate: 90deg;
+  }
+
+  img {
+    width: 25rem;
+    height: auto;
+    border-radius: 30px;
+  }
+  figure {
+    margin-inline: auto;
+    max-width: 400px;
+    /* lige nu sidder de på billed og derfor er maring der men det ødelægger min flex idk */
+    /* margin: 3rem; */
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 14rem;
+      top: -0.5rem;
+      background: green;
+      width: 200px;
+      height: 150px;
+      z-index: -1;
+      border-radius: 30px;
+    }
+    &::after {
+      --square-count: 15;
+      --square-size: 1.5rem;
+
+      --_square-size: var(--square-size, 1rem);
+      --_square-half: calc(var(--square-size) / 2);
+      --_square-sum: calc(var(--square-count) * var(--square-size));
+      z-index: -2;
+      content: "";
+      position: absolute;
+      /* right: 100; */
+      left: -1rem;
+      top: -1rem;
+      transform-origin: 0 0;
+      inline-size: calc(
+        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+      );
+      aspect-ratio: 1/1;
+      background: linear-gradient(
+          135deg,
+          #be965d,
+          #976f40,
+          #c99b61,
+          #f0be7b,
+          #ffcb85,
+          #eebc79,
+          #c0935b,
+          #976f40
+        )
+        0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+        var(--square-pattern) var(--_square-half) var(--_square-half) /
+          var(--_square-size) var(--_square-size);
+      /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+      /* rotate: 0deg; */
+    }
+  }
   [data-icon] {
-    width: 1.50038rem;
-    height: 1.44381rem;
+    width: 2rem;
+    height: auto;
+  }
+  .icons {
+    display: flex;
+    gap: 1.56rem;
+    align-items: center;
+  }
+  .header {
+    /* margin-top: 3rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .job {
+    color: #595566;
+    font-family: Cabin;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 116%; /* 1.45rem */
+  }
+  p {
+    color: #595566;
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%; /* 1.475rem */
+  }
+  .horisotal {
+    height: 0.0625rem;
+    background: #595566;
+    width: 100%;
   }
 </style>
