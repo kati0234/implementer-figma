@@ -1,9 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-const { link, text, title, description, variant } = Astro.props;
+const { link, text, title, description, variant, theme } = Astro.props;
 ---
 
-<article class={variant}>
+<article class={`${variant} ${theme}`}>
   <div class="heder-wrap">
     <Icon name="gear" />
     <h4 class="corevalueheader flow">{title}</h4>
@@ -70,9 +70,22 @@ const { link, text, title, description, variant } = Astro.props;
       color: var(--card-text-collor-dark);
     }
   }
+  /* [data-theme="dark"] {
+    background-color: var(--card-bg-dark);
+
+    p {
+      color: var(--card-text-collor-dark);
+    }
+  }
+  [data-theme="light"] {
+    background: blue;
+    p {
+      color: var(--card-text-collor-ligth);
+    }
+  } */
 
   .light {
-    background-color: var(--card-bg-light);
+    background: #fff;
     p {
       color: var(--card-text-collor-ligth);
     }

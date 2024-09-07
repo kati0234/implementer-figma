@@ -1,8 +1,8 @@
 ---
-const { variant } = Astro.props;
+const { variant, theme = "light" } = Astro.props;
 ---
 
-<button class={variant}>
+<button class={`${variant} ${theme}`}>
   <slot />
 </button>
 
@@ -47,12 +47,12 @@ const { variant } = Astro.props;
   .fat {
     padding: 1rem 1.9375rem;
   }
-
-  .dark {
+  /* problemer med at implemter de rigtige farver idk hvad jeg gør forkert */
+  .light {
     color: var(--button-text-dark);
     background: var(--button-bg-dark);
   }
-  .light {
+  .dark {
     color: var(--button-text-light);
     background: var(--button-bg-light);
   }

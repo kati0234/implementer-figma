@@ -3,26 +3,30 @@ import CorevalueCard from "./CorevalueCard.astro";
 import Button from "./Button.astro";
 
 const { data, theme = "light" } = Astro.props;
+const { title, subtitle, button, text } = data;
 ---
 
 <section data-theme={theme}>
   <div class="flex">
     <div class="inner">
       <p class="p-bg bg">Growing with our Clients</p>
-      <h3>Our core values & principles</h3>
-      <p class="gap">
-        Capitalize on low hanging fruit to identify a ballpark value added
-        activity beta test. Override the digital divide with additional from
-        DevOps.
+      <h3 class={theme}>{title}</h3>
+      <p class={`gap ${theme}`}>
+        {subtitle}
       </p>
     </div>
-    <Button variant="dark fat">Get in touch </Button>
+    <Button variant=" fat" theme={theme}>{button.text} </Button>
   </div>
   <!-- {data.map((corevalue) => <CorevalueCard {...corevalue} />)} -->
   <div class="content">
     {
       data.values.map((corevalue) => (
-        <CorevalueCard {...corevalue} variant={theme} />
+        // <CorevalueCard {...corevalue} variant={theme} />
+        <CorevalueCard
+          {...corevalue}
+          variant={corevalue.variant || "default"}
+          theme={theme}
+        />
       ))
     }
   </div>
@@ -63,9 +67,23 @@ const { data, theme = "light" } = Astro.props;
 
   [data-theme="light"] {
     background: var(--corevalue--light-bg);
+    background: #f5f5f5;
   }
 
   [data-theme="dark"] {
     background: var(--corevalue--dark-bg);
+    h3 {
+      color: #fff;
+    }
+    /* ligenu rammer jeg alle per vil kun ramme det ene  */
+    & > * {
+      color: #fff;
+    }
+  }
+  .light h3 {
+    color: var(--sort-3);
+  }
+  .dark h3 {
+    color: #fff;
   }
 </style>
