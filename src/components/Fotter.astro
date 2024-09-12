@@ -5,7 +5,7 @@
 <footer>
   <div class="inner">
     <p class="logo">AskExperts</p>
-    <!-- eller andet til logo -->
+
     <hr />
     <p>
       &#169 2022 Consultalk. All rights reserved | Terms of Service | Privacy
@@ -18,14 +18,13 @@
   @layer components {
     footer {
       background: var(--footer-bg-coler);
-      /* align-self: end; */
     }
     .inner {
       display: flex;
 
       padding: 2.875rem 0rem;
       flex-direction: column;
-      /* justify-content: center; */
+
       align-items: center;
       gap: 0.625rem;
     }
@@ -37,7 +36,7 @@
     .logo {
       color: var(--footer-text-coler);
       font-family: Cabin;
-      /* font-size: 1.875rem; */
+
       font-size: var(--logo-text-size);
       font-style: normal;
       font-weight: 600;
@@ -49,9 +48,4 @@
       font-weight: 400;
     }
   }
-
-  --hr-color: var(--grey-1);
-  --footer-bg-coler: var(--sort-3);
-  --footer-text-coler: var(--white-1);
-  --logo-text-size: var(--fluid-14-30);
 </style>

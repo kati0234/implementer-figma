@@ -19,6 +19,26 @@
     --grey-1: #707070;
     --grey-2: #f5f5f5;
     --grey-3: #595566;
+    --green: #4eaf4e;
+
+    /* font size */
+
+    --fluid-30-50: clamp(1.875rem, 1.4402rem + 2.1739vw, 3.125rem);
+    --fluid-25-45: clamp(1.5625rem, 1.1277rem + 2.1739vw, 2.8125rem);
+    --fluid-20-40: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
+    --fluid-16-35: clamp(1rem, 0.587rem + 2.0652vw, 2.1875rem);
+    --fluid-14-30: clamp(0.875rem, 0.5272rem + 1.7391vw, 1.875rem);
+    --fluid-12-25: clamp(0.75rem, 0.4674rem + 1.413vw, 1.5625rem);
+    --fluid-16-20: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+    --fluid-12-16: clamp(0.75rem, 0.663rem + 0.4348vw, 1rem);
+
+    /* border radius */
+    --borer-s: 1.25rem;
+    /* contakt us list */
+    --title-color: var(--grey-3);
+    --desription-color: var(--sort-3);
+    --title-size: var(--fluid-12-16);
+    --desription-size: var(--fluid-16-20);
 
     /* core value card */
     /* dark */
@@ -62,21 +82,14 @@
     --button-bg-light: var(--white-2);
     --button-text-light: var(--sort-3);
 
-    /* font size */
-
-    --fluid-30-50: clamp(1.875rem, 1.4402rem + 2.1739vw, 3.125rem);
-    --fluid-25-45: clamp(1.5625rem, 1.1277rem + 2.1739vw, 2.8125rem);
-    --fluid-20-40: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
-    --fluid-16-35: clamp(1rem, 0.587rem + 2.0652vw, 2.1875rem);
-    --fluid-14-30: clamp(0.875rem, 0.5272rem + 1.7391vw, 1.875rem);
-    --fluid-12-25: clamp(0.75rem, 0.4674rem + 1.413vw, 1.5625rem);
-
     /* font */
     --logo-text-size: var(--fluid-14-30);
 
     /* news */
     --subscribe-text-size: var(--fluid-16-35);
     /* cgart */
+    --cgart-center-size: var(--fluid-16-35);
+    --cgart-decription-size: var(--fluid-12-16);
     --cgart-bg: var(--yelow-2);
     --cgart-border-fill-bg: var(--yelow-3);
     --cgart-border-fill: var(--white-2);
@@ -89,6 +102,10 @@
     --card-border-radius: 8px;
     --card-background: #ebebeb;
     --card-text-color: #595566;
+
+    /* contakt list */
+
+    --p-bg-contakt: var(--yelow-2);
     /* mere */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",

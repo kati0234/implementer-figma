@@ -6,42 +6,36 @@
   <div class="bg">
     <div class="parent" style="--percent: 85%">
       <div class="child"></div>
-      <p>85%</p>
+      <p class="center-text">85%</p>
     </div>
-    <p>consisgency</p>
+    <p class="description">consisgency</p>
   </div>
   <div class="bg">
     <div class="parent" style="--percent: 95%">
       <div class="child"></div>
-      <p>95%</p>
+      <p class="center-text">95%</p>
     </div>
-    <p>Improvement</p>
+    <p class="description">Improvement</p>
   </div>
   <div class="bg">
     <div class="parent" style="--percent: 90%">
       <div class="child"></div>
-      <p>90%</p>
+      <p class="center-text">90%</p>
     </div>
-    <p>Branching</p>
+    <p class="description">Branching</p>
   </div>
 </div>
 
-<!-- <div class="parent" style="--percent: 95%">
-  <div class="child"></div>
-</div>
-
-<div class="parent" style="--percent: 90%">
-  <div class="child"></div>
-</div> -->
 <style>
-  /*@property --percent {
-  syntax: "<percentage>";
-  inherits: true;
-  initial-value: 0%;
-}*/
+  @property --percent {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+  }
   .cgart-box {
     display: flex;
     gap: 1.625rem;
+    flex-wrap: wrap;
   }
   .bg {
     background: var(--cgart-bg);
@@ -52,7 +46,7 @@
   }
   .parent {
     --offset-pos: 5px;
-    /*animation: --pie 3s linear infinite;*/
+    animation: --pie 5s linear infinite;
     border: var(--offset-pos) solid transparent;
     background:
       linear-gradient(var(--cgart-bg), var(--cgart-bg)) padding-box,
@@ -77,11 +71,16 @@
     }
   }
 
-  /*@keyframes --pie {
-  to {
-    --percent: 100%;
+  /* @keyframes --pie {
+    to {
+      --percent: 100%;
+    }
+  } */
+  @keyframes --pie {
+    from {
+      --percent: 0%;
+    }
   }
-}*/
 
   .parent {
     aspect-ratio: 1;
@@ -89,10 +88,11 @@
     border-radius: 1e5px;
     margin-inline: auto;
   }
+  .description {
+    font-size: var(--cgart-decription-size);
+  }
 
-  /* cgart */
-  --cgart-bg: var(--yelow-2);
-  --cgart-border-fill-bg: var(--yelow-3);
-  --cgart-border-fill: var(--white-2);
-  --cgart-dot-fill: var(--sort-3);
+  .center-text {
+    font-size: var(--cgart-center-size);
+  }
 </style>

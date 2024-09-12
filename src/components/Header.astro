@@ -7,22 +7,83 @@ import Button from "./Button.astro";
     <div class="logo">AskExperts</div>
     <nav>
       <ul class="nav-list">
-        <li><a href="/index">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/team"> Team</a></li>
         <li><a href="/casestudy">Case Study</a></li>
 
         <li><a href="/about"> About</a></li>
       </ul>
     </nav>
-    <Button variant="secondary"> Login </Button>
+    <button popovertarget="popup">Logind</button>
   </div>
-
+  <div class="pop" popover id="popup">
+    <h2>Dashboard Login</h2>
+    <input type="email" placeholder="Enter Email" required />
+    <input type="email" placeholder="Enter Password" required />
+    <Button variant="secondary" theme="secondary"> Login </Button>
+  </div>
   <style>
     @layer compnents {
-      /* ::backdrop {
-      background: #0004;
-      backdrop-filter: blur(100px);
-    } */
+      [popover] {
+        display: none; /* Start som skjult */
+      }
+
+      h2 {
+        color: #fff;
+      }
+      .pop {
+        border-radius: 1.875rem;
+        background: var(--sort-3);
+        border-radius: 1.875rem;
+        display: flex;
+        padding: 2.5rem 3.75rem 3.75rem 3.75rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.625rem;
+        align-items: center;
+      }
+      input {
+        padding: 1rem 1.9375rem;
+        border-radius: 3.375rem;
+        border: 1px solid #e3e3e3;
+        background: #fff;
+      }
+      [popover] {
+        pointer-events: none; /* Deaktiver klik når popover er skjult */
+        opacity: 0;
+        translate: 0 -100%;
+        transition: 0.6s;
+        transition-property: opacity, display, translate;
+
+        &:popover-open {
+          @starting-style {
+            opacity: 0;
+            translate: 0 100%;
+          }
+          opacity: 1;
+          translate: 0 0;
+        }
+      }
+
+      [popover]::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(16px);
+      }
+      button {
+        font-family: "Lato", sans-serif;
+        border-radius: 3.4375rem;
+        padding: 1rem 1.9375rem;
+        width: fit-content;
+        height: fit-content;
+        color: var(--button-text-secondary);
+        background: var(--button-bg-secondary);
+        padding: 1rem 1.9375rem;
+        &:hover {
+          color: var(--button-text-primery);
+          background-color: var(--button-bg-primery);
+        }
+      }
+
       header {
         background: var(--header-bg);
       }

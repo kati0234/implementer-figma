@@ -27,4 +27,16 @@
   .readmore {
     --flow-space: 1.375rem;
   }
+  .knap {
+    --flow-space: 1.8rem;
+  }
+  .homecardbutten {
+    --flow-space: 2.5rem;
+  }
+  .li-gap {
+    --flow-space: 2.5rem;
+  }
+  .contakt {
+    --flow-space: 1rem;
+  }
 }

@@ -1,44 +1,48 @@
 ---
-const { bgimg } = Astro.props;
+const { bgimg, side, title } = Astro.props;
 ---
 
 <div class="hero" style=`--bg: ${bgimg}`>
   <div class="box">
-    <p>Team</p>
-    <h1>the Consultors</h1>
+    <p>{side}</p>
+    <h1>{title}</h1>
   </div>
 </div>
 <style>
-  .hero {
-    grid-column: full;
-    display: grid;
-    grid-template-columns: subgrid;
-    /* grid-template-columns: subgrid; */
-    background-image: var(--bg);
-    ba
-  }
-  .box {
-    width: fit-content;
-
-    margin: 10rem 0;
-    grid-column: content;
-    padding: 3rem 3.75rem;
-    border-radius: 1.8125rem;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(5.5px);
-  }
-  p {
-    width: fit-content;
-    padding: 0rem 0.9375rem;
-    background-color: var(--p-bg);
-    border-radius: 1.25rem;
-    color: #181818;
-    font-family: Lato;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 147.5%; /* 1.475rem */
-    letter-spacing: 0.145rem;
-    text-transform: uppercase;
+  @layer components {
+    h1 {
+      text-wrap: pretty;
+    }
+    .hero {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: subgrid;
+      background-repeat: no-repeat;
+      background-image: var(--bg);
+    }
+    .box {
+      width: fit-content;
+      max-width: 50rem;
+      margin: 10rem 0;
+      grid-column: content;
+      padding: 3rem 3.75rem;
+      border-radius: 1.8125rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5.5px);
+    }
+    p {
+      width: fit-content;
+      padding: 0rem 0.9375rem;
+      background-color: var(--p-bg);
+      border-radius: 1.25rem;
+      color: #181818;
+      font-family: Lato;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 147.5%; /* 1.475rem */
+      letter-spacing: 0.145rem;
+      text-transform: uppercase;
+    }
   }
 </style>

@@ -17,11 +17,10 @@ const { title, subtitle, button, text } = data;
     </div>
     <Button variant=" fat" theme={theme}>{button.text} </Button>
   </div>
-  <!-- {data.map((corevalue) => <CorevalueCard {...corevalue} />)} -->
+
   <div class="content">
     {
       data.values.map((corevalue) => (
-        // <CorevalueCard {...corevalue} variant={theme} />
         <CorevalueCard
           {...corevalue}
           variant={corevalue.variant || "default"}
@@ -51,7 +50,9 @@ const { title, subtitle, button, text } = data;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: end;
+    gap: 2rem;
     p {
       text-wrap: balance;
     }
@@ -61,8 +62,9 @@ const { title, subtitle, button, text } = data;
   }
   .content {
     margin-top: 2.1rem;
-    display: flex;
-    justify-content: space-between;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   [data-theme="light"] {
@@ -75,7 +77,7 @@ const { title, subtitle, button, text } = data;
     h3 {
       color: #fff;
     }
-    /* ligenu rammer jeg alle per vil kun ramme det ene  */
+
     & > * {
       color: #fff;
     }
@@ -85,5 +87,12 @@ const { title, subtitle, button, text } = data;
   }
   .dark h3 {
     color: #fff;
+  }
+
+  @media (min-width: 800px) {
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 </style>

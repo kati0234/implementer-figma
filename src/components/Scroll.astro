@@ -99,18 +99,27 @@ import { Icon } from "astro-icon/components";
     font-size: 1.5625rem;
   }
   .top {
-    margin-top: 9.25rem;
+    /* margin-top: 5.25rem; */
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-
-    p {
-      max-width: 40.3125rem;
-    }
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 2rem;
+    container-type: inline-size;
+  }
+  .top p {
+    max-width: 40.3125rem;
   }
   .pile {
     display: flex;
     height: fit-content;
     gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .top {
+      /* margin-top: 9.25rem; */
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
   }
 </style>

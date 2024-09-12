@@ -1,6 +1,6 @@
 ---
-const { title = "ask" } = Astro.props;
 import "../styls/global.css";
+const { title = "ask" } = Astro.props;
 import Header from "../components/Header.astro";
 import Fotter from "../components/Fotter.astro";
 import News from "../components/News.astro";
@@ -12,8 +12,6 @@ import News from "../components/News.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <!-- <link rel="stylesheet" href="./assets/global.css" />
-    <link rel="stylesheet" href="./styls/global.css" /> -->
   </head>
   <body>
     <Header />
@@ -32,10 +30,12 @@ import News from "../components/News.astro";
       display: grid;
       grid-template-columns: [full-start]1fr [content] minmax(0, 1200px) 1fr [full-end];
       /* gap: 6.9rem 1rem; */
+      column-gap: 1rem;
       > * {
         grid-column: full;
         display: grid;
         grid-template-columns: subgrid;
+
         > * {
           grid-column: content;
         }

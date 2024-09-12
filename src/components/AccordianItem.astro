@@ -5,7 +5,7 @@ const { id, question, answer, linkBlock } = props;
 
 <li>
   <article>
-    <h3>
+    <h5>
       <button aria-expanded="false" aria-controls={id}>
         <span>{question}</span>
         <svg
@@ -18,17 +18,10 @@ const { id, question, answer, linkBlock } = props;
           <line x1="1" y1="5" x2="9" y2="5"></line>
         </svg>
       </button>
-    </h3>
+    </h5>
     <div class="outer">
       <div class="answer" id={id}>
-        {answer.map((a) => <p set:html={a} />)}
-        {
-          linkBlock && (
-            <a class="link-block" href={linkBlock.url} target="_blank">
-              {linkBlock.label}
-            </a>
-          )
-        }
+        {answer}
       </div>
     </div>
   </article>
@@ -57,7 +50,9 @@ const { id, question, answer, linkBlock } = props;
     color: #181818;
     text-wrap: revert;
   }
-
+  h5 {
+    font-size: var(--fluid-12-25);
+  }
   button {
     border: none;
     text-align: start;

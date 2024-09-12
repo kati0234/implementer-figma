@@ -1,0 +1,59 @@
+---
+import Cheklist from "./Cheklist.astro";
+import { Image } from "astro:assets";
+import Homesection from "../assets/images/homefirst.png";
+---
+
+<section>
+  <div class="flex">
+    <figure>
+      <Image src={Homesection} alt="/" />
+    </figure>
+
+    <div>
+      <Cheklist
+        variant="home"
+        description="WE'LL WORK WITH YOU"
+        title="What To Expect"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      />
+    </div>
+  </div>
+</section>
+<style>
+  img {
+    border-radius: 30px;
+  }
+  figure {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1rem;
+      top: -0.5rem;
+      background: green;
+      width: 200px;
+      height: 150px;
+      z-index: -1;
+      border-radius: 30px;
+    }
+  }
+  .flex {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.44rem;
+  }
+
+  section {
+    margin-top: 5.95rem;
+    margin-bottom: 5.95rem;
+  }
+  @media (min-width: 800px) {
+    .flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

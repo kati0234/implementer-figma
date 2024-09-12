@@ -4,16 +4,22 @@ const corevalueData = await fetch(
 ).then((res) => res.json());
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CgartSection from "../components/CgartSection.astro";
-import Hero from "../components/Hero.astro";
+
 import Scroll from "../components/Scroll.astro";
-import CorevalueCard from "../components/CorevalueCard.astro";
 import CorevalueSection from "../components/CorevalueSection.astro";
+import FirstsectionHome from "../components/FirstsectionHome.astro";
+import Herohome from "../components/Herohome.astro";
+
+import ContaktListe from "../components/ContaktListe.astro";
 ---
 
 <BaseLayout title="home">
-  <Hero bgimg="url(/images/about-hero.png)" />
+  <Herohome />
+
+  <FirstsectionHome />
   <Scroll />
   <CgartSection />
   <CorevalueSection data={corevalueData} theme="dark" />
-  <h1></h1>
+
+  <ContaktListe />
 </BaseLayout>

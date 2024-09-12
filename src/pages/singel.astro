@@ -2,17 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import Accordian from "../components/Accordian.astro";
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/images/*.{jpeg,jpg,png,gif}"
 );
 ---
 
 <BaseLayout title="about">
-  <section>
+  <section view-transition-name="employee-card-{name}">
     <div class="box">
       <figure><img src="./images/daisyy.jpg" alt="" /></figure>
-      <div>
+      <div class="flow">
         <div class="header">
           <div>
             <h1>Sarah Jasmine</h1>
@@ -34,13 +34,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         </p>
         <hr class="horisotal" />
         <h2>Past experience</h2>
-
         <p>
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui. Lorem ipsum dolor sit amet, consectetur
           adipiscing elit sed do. Lorem ipsum dolor sit amet, consectetur
           adipiscing elit, sed do eiusmod tempor incididunt labore et dolore
+        </p>
+        <p>
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
           ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
           irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -49,46 +50,12 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </div>
     </div>
   </section>
-  <!-- <section>
-    <div>
-      <figure></figure>
-      <div>
-        <h1>sara jasmin</h1>
-        <p>ceo</p>
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel harum fuga
-        ipsam aperiam molestiae. Quis reiciendis eius accusamus quisquam,
-        repellat odit nam in sint aliquam inventore, voluptate architecto fugiat
-        fuga?
-      </p>
-      <div class="felx">
-        <Icon name="instagram-dark" />
-        <Icon name="facebook-dark" />
-        <Icon name="twitter-dark" />
-        <Icon name="linked-in" />
-      </div>
-      <hr />
-      <h4>Past experience</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo non
-        officiis vero dolorum, minima molestiae veritatis accusamus quia quos?
-        Laboriosam, cumque at quaerat modi nisi non iste pariatur temporibus
-        culpa?
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
-        dolore dicta pariatur qui ut consequatur quae alias quia aliquam,
-        libero, explicabo numquam molestias porro impedit dolorum ratione
-        ducimus laboriosam cum?
-      </p>
-    </div>
-  </section> -->
 </BaseLayout>
 <style>
   .box {
     margin-top: 10rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 5.5625rem;
   }
@@ -102,7 +69,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   img {
     width: 25rem;
     height: auto;
-    border-radius: 30px;
+    border-radius: var(--borer-s);
   }
   figure {
     margin-inline: auto;
@@ -196,5 +163,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     height: 0.0625rem;
     background: #595566;
     width: 100%;
+  }
+  @media (min-width: 600px) {
+    .box {
+      margin-top: 10rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 5.5625rem;
+      flex-wrap: nowrap;
+    }
   }
 </style>

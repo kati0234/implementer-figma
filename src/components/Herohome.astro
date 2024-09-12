@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import Sara from "../assets/images/sarah.jpg";
+import Button from "./Button.astro";
+import Homecard from "./Homecard.astro";
+---
+
+<section>
+  <div class="grid">
+    <div class="tom"></div>
+    <div class="content flow">
+      <h1>Adam Buschemia Business Consultant</h1>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <Button theme="dark fat knap"> Book a meeting </Button>
+    </div>
+    <div class="biled">
+      <Image src={Sara} alt="/" />
+    </div>
+
+    <div class="homecard">
+      <Homecard />
+    </div>
+  </div>
+</section>
+<style>
+  .tom {
+    position: absolute;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--sort-3);
+  }
+  .grid {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+  }
+  .homecard {
+    grid-column: 1 / -1;
+    grid-row: 2/-1;
+  }
+  .content {
+    padding: 5rem 0rem 5rem 5rem;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .biled {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    contain: size;
+  }
+  p {
+    text-wrap: balance;
+  }
+  section {
+    grid-column: full;
+    color: #fff;
+  }
+  h1 {
+    color: #fff;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>

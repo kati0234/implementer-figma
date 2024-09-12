@@ -1,0 +1,102 @@
+---
+import Cheklist from "./Cheklist.astro";
+import { Image } from "astro:assets";
+import Aboutsection from "../assets/images/aboutsection.jpg";
+import Counters from "./Counters.astro";
+---
+
+<section>
+  <div class="flex">
+    <div>
+      <Cheklist
+        variant="about"
+        description="0ur vision"
+        title="Turn your ideas into reality."
+        text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+      />
+    </div>
+
+    <figure>
+      <Image src={Aboutsection} alt="/" />
+    </figure>
+  </div>
+  <Counters />
+</section>
+<style>
+  .flex {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    /* gap: 7.625rem; */
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+    margin-top: 5.95rem;
+    margin-bottom: 5.95rem;
+  }
+  figure {
+    margin-inline: auto;
+    max-width: 400px;
+    /* lige nu sidder de på billed og derfor er maring der men det ødelægger min flex idk */
+    margin: 3rem;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -1rem;
+      top: -1rem;
+      background: #4eaf4e;
+      width: 200px;
+      height: 150px;
+      z-index: -1;
+      border-radius: 30px;
+    }
+    &::after {
+      --square-count: 8;
+      --square-size: 1.5rem;
+
+      --_square-size: var(--square-size, 1rem);
+      --_square-half: calc(var(--square-size) / 2);
+      --_square-sum: calc(var(--square-count) * var(--square-size));
+      z-index: -2;
+      content: "";
+      position: absolute;
+      /* right: 100; */
+      right: -3rem;
+      top: -2rem;
+      transform-origin: 0 0;
+      inline-size: calc(
+        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+      );
+      aspect-ratio: 1/1;
+      background: linear-gradient(
+          135deg,
+          #be965d,
+          #976f40,
+          #c99b61,
+          #f0be7b,
+          #ffcb85,
+          #eebc79,
+          #c0935b,
+          #976f40
+        )
+        0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+        var(--square-pattern) var(--_square-half) var(--_square-half) /
+          var(--_square-size) var(--_square-size);
+    }
+  }
+  @media (min-width: 800px) {
+    .flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* gap: 7.625rem; */
+    }
+  }
+</style>

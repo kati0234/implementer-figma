@@ -4,31 +4,26 @@ const employeeData = await fetch(
 ).then((res) => res.json());
 
 import EmployeeSection from "../components/EmployeeSection.astro";
-import { Image } from "astro:assets";
 
-import Knap from "../components/Button.astro";
-import Cgart from "../components/Cgart.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import john from "../assets/images/john.jpg";
-import EmployeeCard from "../components/EmployeeCard.astro";
+
 import Hero from "../components/Hero.astro";
 import Button from "../components/Button.astro";
 ---
 
 <BaseLayout title="home">
-  <Hero bgimg="url(/images/team-hero.png)" />
-  <div>
-    <div class="grid">
-      <div>
-        <h2>Meet Our Great Team</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad
-          minim veniam, quis nostrud exercitation.
-        </p>
-      </div>
-      <Button variant="primary" class="button-grid"> Join our team</Button>
+  <Hero bgimg="url(/images/team-hero.png)" side="team" title="The Consultors" />
+
+  <div class="grid">
+    <div>
+      <h2>Meet Our Great Team</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. enim ad minim
+        veniam, quis nostrud exercitation.
+      </p>
     </div>
+    <Button variant="primary fed" class="button-grid"> Join our team</Button>
   </div>
 
   <EmployeeSection data={employeeData} />
@@ -39,23 +34,13 @@ import Button from "../components/Button.astro";
     font-family: "Lato", sans-serif;
   }
   .grid {
+    margin-top: 4rem;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
     p {
       max-width: 39.375rem;
     }
   }
-  /* .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  h2 {
-    grid-column: 1;
-  }
-
-  p {
-    grid-column: 1; 
-  }
-  .button-grid {
-    grid-column: -1;
-  } */
 </style>

@@ -1,11 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
-const { link, text, title, description, variant, theme } = Astro.props;
+const { link, text, title, description, variant, theme, icon } = Astro.props;
 ---
 
 <article class={`${variant} ${theme}`}>
   <div class="heder-wrap">
-    <Icon name="gear" />
+    <Icon name={icon} />
     <h4 class="corevalueheader flow">{title}</h4>
   </div>
   <p class="corevaluetext flow">
@@ -44,7 +44,7 @@ const { link, text, title, description, variant, theme } = Astro.props;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 116%; /* 1.45rem */
+    line-height: 116%;
   }
 
   article {
@@ -70,19 +70,6 @@ const { link, text, title, description, variant, theme } = Astro.props;
       color: var(--card-text-collor-dark);
     }
   }
-  /* [data-theme="dark"] {
-    background-color: var(--card-bg-dark);
-
-    p {
-      color: var(--card-text-collor-dark);
-    }
-  }
-  [data-theme="light"] {
-    background: blue;
-    p {
-      color: var(--card-text-collor-ligth);
-    }
-  } */
 
   .light {
     background: #fff;
@@ -98,7 +85,7 @@ const { link, text, title, description, variant, theme } = Astro.props;
   .readmore {
     display: flex;
     gap: 1rem;
-    /* text stling midlertidig  */
+
     color: #181818;
     font-family: Lato;
     font-size: 1rem;

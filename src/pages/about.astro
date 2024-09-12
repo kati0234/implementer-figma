@@ -1,4 +1,8 @@
 ---
+const employeeData = await fetch(
+  "https://raw.githubusercontent.com/kati0234/frontend-design/main/resources/json/employees.json"
+).then((res) => res.json());
+const firsttree = employeeData.slice(0, 3);
 const corevalueData = await fetch(
   "https://raw.githubusercontent.com/kati0234/frontend-design/main/resources/json/corevalues.json"
 ).then((res) => res.json());
@@ -6,34 +10,23 @@ const corevalueData = await fetch(
 console.log(Array.isArray(corevalueData));
 import CorevalueSection from "../components/CorevalueSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Icon } from "astro-icon/components";
-import Cheklist from "../components/Cheklist.astro";
 import Accordian from "../components/Accordian.astro";
 import Hero from "../components/Hero.astro";
-import Counters from "../components/Counters.astro";
+import EmployeeSection from "../components/EmployeeSection.astro";
+import Fitstsection from "../components/Fitstsection.astro";
 ---
 
 <BaseLayout title="about">
-  <Hero bgimg="url(/images/about-hero.png)" />
-  <section>
-    <div class="flex">
-      <div>
-        <Cheklist
-          variant="about"
-          description="0ur vision"
-          title="Turn your ideas into reality."
-          text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
-        />
-      </div>
-      <div class="billed-box">
-        <figure>
-          <img src="./images/about-mensker.jpg" alt="" />
-        </figure>
-      </div>
-    </div>
-    <Counters />
-  </section>
+  <Hero
+    bgimg="url(/images/about-hero.png)"
+    side="services"
+    title="Creative Services For Boost Your Business Growth"
+  />
+  <Fitstsection />
+
   <CorevalueSection data={corevalueData} theme="light" />
+  <EmployeeSection data={firsttree} />
+  <Accordian />
 </BaseLayout>
 <style>
   .flex {

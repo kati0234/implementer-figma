@@ -1,0 +1,60 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="wap">
+  <div class="container">
+    <div class="card flow">
+      <strong> <p>Finance & Restructuring</p></strong>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <Button theme="light fat homecardbutten">Our Services</Button>
+    </div>
+    <div class="card flow">
+      <strong> <p>Finance & Restructuring</p></strong>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <Button theme="light fat homecardbutten">Our Services</Button>
+    </div>
+    <div class="card flow">
+      <strong> <p>Finance & Restructuring</p></strong>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <Button theme="light fat homecardbutten">Our Services</Button>
+    </div>
+  </div>
+</div>
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 1.25rem;
+  }
+  .card {
+    background: rgba(38, 38, 38, 0.9);
+    backdrop-filter: blur(16px);
+    border-radius: var(--borer-s);
+    color: #fff;
+    padding: 2.88rem;
+    font-size: 1rem;
+    text-wrap: balance;
+  }
+  strong {
+    font-family: Cabin;
+    font-size: 1.5625rem;
+  }
+  @media (min-width: 800px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column: content;
+    }
+  }
+</style>
