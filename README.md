@@ -45,3 +45,25 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+# refletion
+
+ 
+Jeg syntes at opgaven har været fin dog ville det have været en del letter hvis, figma prototypen var opret med variabler, da der ville have sparet en del tid iforhold til tids forbrug. 
+
+Jeg ville gerne have oprette nogle flere animarioner og jeg ville gerne have prøvet mig med view transition.
+
+
+
+Contakt List 
+
+For at få iconeren ind på min liste har jeg valgt at konverter min svg filer til data url så jeg kunne sætte dem dirket ind i min css.
+
+Først har jeg sat dem ind i root
+Herfter har jeh så brugt dem på li::before for at få dem til at ligge på liste prikkens plads 
+
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
