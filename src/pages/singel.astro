@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import Dasy from "../assets/images/daisy.jpg";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/images/*.{jpeg,jpg,png,gif}"
@@ -11,7 +12,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <BaseLayout title="about">
   <section view-transition-name="employee-card-{name}">
     <div class="box">
-      <figure><img src="./images/daisyy.jpg" alt="" /></figure>
+      <figure>
+        <Image src={Dasy} alt="/" />
+      </figure>
       <div class="flow">
         <div class="header">
           <div>
